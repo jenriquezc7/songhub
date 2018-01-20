@@ -2,14 +2,16 @@
     <div fxFlex="20%" fxLayout="column">
         <mat-card fxFlex="auto">
             <mat-card-content fxLayout="column">
-                <mat-form-field>
-                    <input matInput placeholder="Username">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Password">
-                </mat-form-field>
+                <form [formGroup]="form">
+                    <mat-form-field>
+                        <input formControlName="email" matInput placeholder="Email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="password" matInput placeholder="Password">
+                    </mat-form-field>
+                </form>
             </mat-card-content>
-            <button mat-raised-button color="accent">Login</button>
+            <button (click)="login()" mat-raised-button color="accent">Login</button>
         </mat-card>
     </div>
 </div>

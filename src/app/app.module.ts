@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import { TvMazeService } from './services/tv-maze.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
@@ -13,7 +14,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 const routes: Routes = [
   {
@@ -43,7 +45,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [TvMazeService],
   bootstrap: [AppComponent]

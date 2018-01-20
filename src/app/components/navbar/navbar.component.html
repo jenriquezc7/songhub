@@ -6,6 +6,6 @@
         </span>
         <input [(ngModel)]="query" (keyup.enter)="query ? onSearch() : ''" class="form-control" name="search" placeholder="Search for a series..." type="text" >
     </div>
-    <button mat-button>Login</button>
+    <button routerLink="login" mat-button>Login</button>
     <a routerLink="sign-up" mat-raised-button color="accent">Sign up</a>
 </mat-toolbar>
