@@ -1,0 +1,9 @@
+
+<div style="min-height: 100vh" *ngIf="loading$ | async" fxLayout fxLayoutAlign="center center">
+    <mat-spinner color="accent"></mat-spinner>
+</div>
+<div *ngIf="!(loading$ | async)" fxLayout fxLayoutAlign="center start">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center" fxFlex="90%">
+        <show-list [shows]="shows$ | async"></show-list>
+    </div>
+</div>

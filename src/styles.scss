@@ -1,0 +1,64 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "scss/theme";
+
+body{
+    margin: 0;
+    background-color: #eff2f5;
+}
+
+.container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar {
+    color: grey;
+    position: fixed;
+    // top: 0px;
+    width: 100%;
+    padding: 1rem;
+    z-index: 50;
+    background: rgb(38, 38, 38);
+}
+
+.elevation{
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.footer{
+    color: grey;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-top: none;
+    background: rgb(38, 38, 38);
+}
+
+.input-group-transparent .form-control:last-child, .input-group-no-border .form-control:last-child, .input-group-transparent .input-group-addon:last-child, .input-group-no-border .input-group-addon:last-child, .input-group-transparent .input-group-btn:last-child > .btn, .input-group-no-border .input-group-btn:last-child > .btn, .input-group-transparent .input-group-btn:last-child > .btn-group > .btn, .input-group-no-border .input-group-btn:last-child > .btn-group > .btn, .input-group-transparent .input-group-btn:last-child > .dropdown-toggle, .input-group-no-border .input-group-btn:last-child > .dropdown-toggle, .input-group-transparent .input-group-btn:first-child > .btn:not(:first-child), .input-group-no-border .input-group-btn:first-child > .btn:not(:first-child), .input-group-transparent .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .input-group-no-border .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.input-no-border, .input-group-no-border .form-control, .input-group-no-border .input-group-addon {
+    border: none;
+    transition: background-color ease-in-out 0.15s;
+}
+
+.input-group-transparent .form-control:first-child, .input-group-no-border .form-control:first-child, .input-group-transparent .input-group-addon:first-child, .input-group-no-border .input-group-addon:first-child, .input-group-transparent .input-group-btn:first-child > .btn, .input-group-no-border .input-group-btn:first-child > .btn, .input-group-transparent .input-group-btn:first-child > .btn-group > .btn, .input-group-no-border .input-group-btn:first-child > .btn-group > .btn, .input-group-transparent .input-group-btn:first-child > .dropdown-toggle, .input-group-no-border .input-group-btn:first-child > .dropdown-toggle, .input-group-transparent .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-no-border .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-transparent .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .input-group-no-border .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.input-no-border, .input-group-no-border .form-control, .input-group-no-border .input-group-addon {
+    border: none;
+    transition: background-color ease-in-out 0.15s;
+}
+
+.input-group-transparent .input-group-addon, .input-group-no-border .input-group-addon {
+    background-color: #fff;
+    transition: border-color ease-in-out 0.15s;
+}

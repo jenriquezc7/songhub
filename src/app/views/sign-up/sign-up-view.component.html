@@ -1,0 +1,43 @@
+<div style="min-height: 100vh" fxLayout fxLayoutAlign="center center">
+    <div fxFlex="20%" fxLayout="column">
+        <mat-card fxFlex="auto">
+            <mat-card-content >
+                <form fxLayout="column" [formGroup]="form">
+                    <image-picker (change)="onAvatarChanged($event)"></image-picker>
+                    <br>
+                    <mat-form-field>
+                        <input formControlName="username" matInput placeholder="Username">
+                        <mat-error *ngIf="form.get('username').hasError('required')">
+                            Username is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="email" matInput placeholder="Email">
+                        <mat-error *ngIf="form.get('email').hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                        <mat-error *ngIf="form.get('email').hasError('email')">
+                            Email is <strong>invalid</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="password" type="password" matInput placeholder="Password">
+                        <mat-error *ngIf="form.get('password').hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="confirmPassword" type="password" matInput placeholder="Confirm password">
+                        <mat-error *ngIf="form.get('confirmPassword').hasError('required')">
+                            Password confirmation is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+            <button [disabled]="true" class="pull-right" mat-raised-button color="accent">
+                <!-- <i class="fa fa-spin fa-spinner"></i> -->
+                Sign up
+            </button>
+        </mat-card>
+    </div>
+</div>

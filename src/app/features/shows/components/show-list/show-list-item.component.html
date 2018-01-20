@@ -1,0 +1,9 @@
+<mat-card fxLayout="row" fxLayoutGap="20px" fxLayoutAlignment="start stretch">
+    <img *ngIf="show.image" mat-card-image [src]="show.image.medium">
+    <div class="content">
+        <h5 class="search-result-item-heading">
+            <a href="#">{{show.name}}</a>
+        </h5>
+        <div class="info" [innerHTML]="show.summary"></div>
+    </div>
+</mat-card>
