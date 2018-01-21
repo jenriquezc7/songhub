@@ -1,17 +1,9 @@
 <div style="min-height: 100vh" fxLayout fxLayoutAlign="center center">
-    <div fxFlex="20%" fxLayout="column">
+    <div fxFlex="30%" fxLayout="column">
         <mat-card fxFlex="auto">
             <mat-card-content fxLayout="column">
-                <form [formGroup]="form">
-                    <mat-form-field>
-                        <input formControlName="email" matInput placeholder="Email">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input formControlName="password" matInput placeholder="Password">
-                    </mat-form-field>
-                </form>
+                <user-form (save)="login($event)" [isLoading]="isLoggingIn$ | async"></user-form>
             </mat-card-content>
-            <button (click)="login()" mat-raised-button color="accent">Login</button>
         </mat-card>
     </div>
 </div>

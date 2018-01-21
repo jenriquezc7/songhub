@@ -1,9 +1,12 @@
-<navbar></navbar>
+<navbar [userState]="userState$ | async"></navbar>
 <div style="min-height: 100vh; padding-top: 64px;">
     <router-outlet></router-outlet>
 </div>
 <div class="footer">
     HERE GOES THE FOOTER
+    <pre>
+        {{userState$ | async}}
+    </pre>
     <br>
     <br>
 </div>

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar.component';
@@ -11,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         FlexLayoutModule,
         MatButtonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        CommonModule
     ],
     declarations: [NavbarComponent],
     exports: [NavbarComponent]

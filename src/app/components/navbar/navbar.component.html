@@ -1,11 +1,27 @@
 <mat-toolbar fxLayout="row" color="primary" fxLayoutAlign="start center" fxLayoutGap="20px" class="navbar elevation">
-    <span fxFlex="10%">#SongHub</span>
+    <span fxFlex="30%">#SongHub</span>
     <div class="input-group input-group-no-border">
         <span class="input-group-addon">
             <i class="fa fa-search"></i>
         </span>
-        <input [(ngModel)]="query" (keyup.enter)="query ? onSearch() : ''" class="form-control" name="search" placeholder="Search for a series..." type="text" >
+        <input [(ngModel)]="query" (keyup.enter)="query ? onSearch() : ''" class="form-control" name="search" placeholder="Search for a series..."
+            type="text">
     </div>
-    <button routerLink="login" mat-button>Login</button>
-    <a routerLink="sign-up" mat-raised-button color="accent">Sign up</a>
+    <div *ngIf="!userState?.entity" fxLayout="row">
+        <button routerLink="login" mat-button>Login</button>
+        <a routerLink="sign-up" mat-raised-button color="accent">Sign up</a>
+    </div>
+    <div *ngIf="userState?.entity" class="dropdown">
+        <button style="color: white" class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+          {{userState.entity.username}}
+          <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a (click)="onLogout()" class="dropdown-item">
+                <i class="fa fa-sign-out"></i> &nbsp;
+                Logout
+            </a>
+        </div>
+    </div>
 </mat-toolbar>

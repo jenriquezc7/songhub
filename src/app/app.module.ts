@@ -1,3 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { UserEffects } from './store/effects/user.effect';
+import { userReducer } from './store/reducers/user.reducer';
+import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { TvMazeService } from './services/tv-maze.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -39,19 +43,22 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     NavbarModule,
     LoginModule,
     SignUpViewModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({
+      user: userReducer
+    }),
+    EffectsModule.forRoot([UserEffects]),
     StoreDevtoolsModule.instrument(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [TvMazeService],
+  providers: [TvMazeService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
